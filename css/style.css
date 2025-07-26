@@ -72,6 +72,9 @@ section{
     background-position: center;
     background-color: rgba(0, 0, 0, 0.485);
     color: var(--secondary);
+    margin-left: 1rem;
+    margin: 0 auto;
+    padding: 1rem;
 
 }
 
@@ -79,13 +82,43 @@ aside {
   color: var(--secondary);
     grid-area: aside;
     background-color:var(--primary);
-
+    padding: 1rem;
   }
 
 footer {
     grid-area: footer;
     background-color: var(--primary);
 }
+
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.contenido h2 {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+
+
+
+
+
 
 .menu-toggle {
     display: flex;
@@ -181,7 +214,7 @@ footer {
     @media screen and (min-width: 320px) and (max-width: 425px) {
 .container {display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 10vh 45vh auto 30vh;
+  grid-template-rows: 10vh auto auto 30vh;
   grid-template-areas:
     'nav      nav       nav       '
     'aside    aside     aside     '
@@ -204,34 +237,19 @@ footer {
             'aside  section   section   section'
             'aside  section   section   section'    
             'aside  section   section   section'; }
-
-
-    .menu-toggle {
-        display: flex;  
     }
-    .menu {
-        flex-direction: column;
-    }}
-
 
     /* laptos y pantallas Hd */
     @media screen and (min-width:1025px ) and (max-width: 2560px) {
         .container {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: 10vh 20vh 20vh 20vh 30vh;
+            grid-template-rows: 10vh 20vh auto 20vh 30vh;
             grid-template-areas:
                 'nav    nav       nav       nav     nav '
                 'aside  section   section   section section '  
                 'aside  section   section   section section '
                 'aside  section   section   section section '
                 'aside  section   section   section section ';      
-    }
-        .menu-toggle {
-            display: flex;
-        }
-        .menu {
-            flex-direction: column;
-        }
-    }   
+    }}   
 
