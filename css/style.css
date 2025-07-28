@@ -18,29 +18,23 @@ body {
 
 
 .barra{
+  grid-area: nav;
   top: 0;
   width: 100%;
   height: 11.5vh;
     background-color: var(--primary);
     position: fixed;
-    display: flex;
-    flex-wrap: wrap;
     align-content: center;
-    justify-content: flex-end;
-    align-items: flex-start;
-    flex-direction: column;
+    z-index: 1000;
+}
+.logo{ 
+  position: absolute;
+  top: 15%;
+  left: 40%;
 }
 
-  nav {
-    top: 0;
-    display: flex;
-    justify-content: flex-start;
-    position: fixed;
-    margin-top: 0;
-
-width: 45%;
-z-index: 1000;
-}
+  /* nav {
+    width: 100%;} */
 
 li{
     list-style: none;
@@ -58,10 +52,7 @@ a {
   background-position: center;
 }
 
-header {
-  color: white;
 
-}
 
 .contenido{
   display: flex;
@@ -77,9 +68,8 @@ section{
     background-position: center;
     background-color: rgba(0, 0, 0, 0.485);
     color: var(--secondary);
-    margin-left: 1rem;
-    margin: 0 auto;
-    padding: 1rem;
+    margin: 0;
+    padding: 2rem;
 
 }
 
@@ -87,11 +77,13 @@ aside {
   color: var(--secondary);
     grid-area: aside;
     background-color:var(--primary);
-    padding: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
 footer {
-    grid-area: footer;
     background-color: var(--primary);
 }
 
@@ -104,14 +96,10 @@ footer {
     padding: 1rem;
 }
 
-
-.menu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
+.menu a:hover {
+    color: var(--secondary);
+    text-decoration:underline;
+    transition: color 0.3s ease;
 }
 
 .contenido h2 {
@@ -119,13 +107,21 @@ footer {
     margin: 1rem 0;
 }
 
+.recetas {
+  text-align: start;}
 
+.imagen img {
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  box-shadow: 0.3s;
+}
 
-
-
-
-
-.menu-toggle {
+.imagen img:hover {
+    transform: scale(1.2) ;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+  }
+  
+  .menu-toggle {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -135,30 +131,13 @@ footer {
     padding: 1rem;
     background-color: #101B2D;
     width: 4rem;
-}
+  }
 
-.menu-toggle span {
-  display: block;
-  width: 3rem;
-  height: 6px;
-  background-color: #D2A469;
-  margin: 3px 0;
-  transition: 0.3s;
-}
 
-.menu {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-  transition: all 0.3s ease;
-  
-}
+
 
 .menu-toggle-checkbox {
   display: none;
-  
 }
 
 .menu a {
@@ -168,30 +147,47 @@ footer {
   
 }
 
-
-  .menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--primary);
-    flex-direction: column;
-    padding: 1rem;
-    transform: translateY(-100%);
-    transition: all 0.3s ease;
-    
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12vh;
+  gap: 1rem;
+  background-color:var(--primary);
+  padding: 1rem;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
   }
 
   .menu-toggle-checkbox:checked ~ .menu-toggle + .menu,
   .menu-toggle-checkbox:checked + .menu-toggle + .menu {
-    transform: translateY(67px);
+    transform: translateY(11vh);
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-
   }
 
+.menu li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 20px;
+  padding: 0.5rem;
+}
 
+.menu ul{
+padding: 10px;
+}
+.menu-toggle span {
+  display: block;
+  width: 3rem;
+  height: 6px;
+  background-color: #D2A469;
+  margin: 3px 0;
+  transition: 0.3s;
+}
 .menu-toggle-checkbox:checked + .menu-toggle span:nth-child(1) {
     transform: rotate(45deg) translate(12px, 8px);}
 
@@ -204,44 +200,32 @@ footer {
     transform: rotate(-45deg) translate(8px, -6px);}
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* Telefonos */
-    @media screen and (min-width: 320px) and (max-width: 425px) {
+    @media screen and (max-width: 426px) {
 .container {display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 10vh auto auto 30vh;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 10vh auto;
   grid-template-areas:
-    'nav      nav       nav       '
-    'aside    aside     aside     '
-    'section  section   section   '
-    'section  section   section   '
-    'section  section   section   ';
-}
-    }
+    'nav nav'
+    'aside    aside  '
+    'section  section'
+    'section  section'
+    'section  section';
+}}
 
 
 /* tablets */
 @media screen and (min-width: 426px) and (max-width: 1024px) {
     .container {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 10vh 30vh 30vh 20vh;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 10vh auto auto;
         grid-template-areas:
-            'nav    nav       nav       nav    '
-            'aside  section   section   section'   
-            'aside  section   section   section'
-            'aside  section   section   section'    
-            'aside  section   section   section'; }
+            'nav      nav       nav '
+            'aside    aside     aside'   
+            'section  section   section'
+            'section  section   section'    
+            'section  section   section'; }
     }
 
     /* laptos y pantallas Hd */
@@ -249,12 +233,11 @@ footer {
         .container {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: 10vh 20vh auto 20vh 30vh;
+            grid-template-rows: 10vh 25vh 35vh 35vh;
             grid-template-areas:
-                'nav    nav       nav       nav     nav '
-                'aside  section   section   section section '  
-                'aside  section   section   section section '
-                'aside  section   section   section section '
-                'aside  section   section   section section ';      
+                'nav    nav       nav       nav          nav'
+                'aside    aside     aside     aside      aside'  
+                'section  section   section   section    section '
+                'section  section   section   section    section '
+                'section  section   section   section    section ';      
     }}   
-
