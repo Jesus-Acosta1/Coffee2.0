@@ -11,14 +11,12 @@
 <body id="inicio">
     <div class="fondo">
         <div class="barra">
-            <header>
-                <a href="#inicio">
-                    <img src="./Imagenes/Luna-cafe-logo-small.jpg" width="60px" alt="">
-                    <img src="./Imagenes/luna-text-small.jpg" width="120px" alt="">
-                </a>
-            </header>
+            <a class="logo" href="#inicio">
+                <img src="./Imagenes/Luna-cafe-logo-small.jpg" width="60px" alt="">
+                <img src="./Imagenes/luna-text-small.jpg" width="120px" alt="">
+            </a>
 
-            <nav class="menu-burger">
+            <div class="menu-burger">
                 <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" aria-label="Abrir menú" />
                 <label for="menu-toggle" class="menu-toggle" tabindex="0" aria-label="Abrir menú">
                     <span></span>
@@ -30,8 +28,10 @@
                     <li><a href="#Locales">Locales</a></li>
                     <li><a href="#Contacto">Contacto</a></li>
                 </ul>
-            </nav>
+            </div>
         </div>
+
+
         <div class="container">
 
             <aside>
@@ -88,10 +88,10 @@
     </div>
 
     <div id="Menu" class="contenido">
-        <div>
-            <h2>Menu</h2>
-            <h2>Recetas destacadas</h2>
+        <h2>Menu</h2>
+        <h2>Recetas destacadas</h2>
 
+        <div class="recetas">
             <h2>Latte</h2>
             <div class="imagen">
                 <img src="./Imagenes/imagen-cafe-latte.jpg" width="30%" alt="Latte">
